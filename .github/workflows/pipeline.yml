@@ -37,8 +37,6 @@ jobs:
   tag_release:
     needs: simple_deployment_pipeline # This ensures the job runs after the simple_deployment_pipeline job
     runs-on: ubuntu-20.04
-    env:
-      DRY_RUN: false # Set DRY_RUN to true for testing
     steps:
       - uses: actions/checkout@v4
         with:
@@ -48,8 +46,6 @@ jobs:
         uses: anothrNick/github-tag-action@1.70.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DRY_RUN: ${{ env.DRY_RUN }} # Pass the DRY_RUN variable to the action
-        with:
           DEFAULT_BUMP:: patch # Set default bump to patch
           TAG_PREFIX: "v" # Optional: prefix for the tag
-          DRY_RUN: ${{ env.DRY_RUN }} # Use the DRY_RUN variable to control the action
+          DRY_RUN: false
