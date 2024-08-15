@@ -50,6 +50,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ env.DRY_RUN }} # Pass the DRY_RUN variable to the action
         with:
-          default_bump: patch # Set default bump to patch
-          tag_prefix: "v" # Optional: prefix for the tag
-          dry_run: ${{ env.DRY_RUN }} # Use the DRY_RUN variable to control the action
+          DEFAULT_BUMP:: patch # Set default bump to patch
+          TAG_PREFIX: "v" # Optional: prefix for the tag
+          DRY_RUN: ${{ env.DRY_RUN }} # Use the DRY_RUN variable to control the action
