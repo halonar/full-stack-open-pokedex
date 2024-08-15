@@ -38,7 +38,7 @@ jobs:
     needs: simple_deployment_pipeline # This ensures the job runs after the simple_deployment_pipeline job
     runs-on: ubuntu-20.04
     env:
-      DRY_RUN: true # Set DRY_RUN to true for testing
+      DRY_RUN: false # Set DRY_RUN to true for testing
     steps:
       - uses: actions/checkout@v4
         with:
